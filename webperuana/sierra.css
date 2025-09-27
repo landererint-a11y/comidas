@@ -1,0 +1,126 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #d9cbbd, #7d5a4f); /* tierra y montañas */
+    color: #3e2723; /* marrón oscuro */
+    padding: 30px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    text-align: center;
+    color: #5d4037; /* marrón cálido */
+    text-shadow: 2px 2px 5px #2e1f1a;
+    margin-bottom: 50px;
+}
+
+/* Contenedor padre e hijo */
+.padre {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hijo {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    justify-content: center;
+}
+
+/* Cada plato: nieto */
+.nieto {
+    background: #f4ede5cc; /* beige tierra */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(93, 64, 55, 0.25); /* marrón */
+    padding: 25px 30px;
+    max-width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nieto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(93, 64, 55, 0.45);
+}
+
+.nieto h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #8d6e63; /* tierra andina */
+    margin-bottom: 15px;
+    position: relative;
+    font-weight: 700;
+    text-align: center;
+}
+
+.nieto h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #a1887f; /* detalle marrón claro */
+    margin: 8px auto 0;
+    border-radius: 3px;
+}
+
+.nieto img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(62, 39, 35, 0.4);
+    margin-bottom: 20px;
+    object-fit: cover;
+    height: 200px;
+    transition: transform 0.4s ease;
+}
+
+.nieto img:hover {
+    transform: scale(1.05);
+}
+
+.nieto ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #4e342e; /* marrón oscuro */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #5d4037;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap');
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .hijo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nieto {
+        max-width: 90vw;
+    }
+}
